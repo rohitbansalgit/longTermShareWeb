@@ -1,0 +1,147 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- BEGIN: Page Main-->
+<div id="main">
+    <div class="row">
+        <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+
+        <div class="col s12">
+            <div class="container">
+                <div class="section section-data-tables">
+
+
+                    <!-- Page Length Options -->
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="card">
+                                <div class="card-content">
+                                    <h4 class="card-title">All time high</h4>
+                                    <div class="row">
+                                        <div class="col s12">
+                                            <table id="page-length-option" class="display">
+                                                <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Exchange</th>
+                                                    <th>Price</th>
+                                                    <th>Volume</th>
+                                                    <th>P/E ratio</th>
+                                                    <th>Check date</th>
+                                                    <th>Share start date</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for row in rows %}
+                                                <tr>
+                                                    <td>{{ loop.index }}</td>
+                                                    <td><b>{{ row[0] }}</b> ({{ row[1] }})</td>
+                                                    <td>
+                                                        {% if row[2] == 1 %}
+                                                            NSE
+                                                        {% elif row[2] == 2 %}
+                                                            BSE
+                                                        {% elif row[2] == 3 %}
+                                                            NSE, BSE
+                                                        {% endif %}
+                                                    </td>
+                                                    <td>{{ row[3] }}</td>
+                                                    <td>{{ row[4] }}</td>
+                                                    <td>{{ row[5] }}</td>
+                                                    <td>
+                                                        {% if row[7] == None %}
+                                                            <input type="text"  id="{{ row[8] }}" class="datepicker" />
+                                                        {% else %}
+
+                                                        {{ row[7] }}
+                                                        <a href="javascript:void(0)" onclick="remove_check_date({{ row[8] }});" ><i class="material-icons" style="color:red">delete_forever</i> </a>
+                                                        {% endif %}
+
+                                                    </td>
+
+                                                    <td>
+                                                        {% if row[9] == None %}
+                                                            <input type="text"  id="start_{{ row[8] }}" class="datepicker" />
+                                                        {% else %}
+
+                                                        {{ row[9] }}
+                                                        {% endif %}
+
+                                                    </td>
+                                                    <!-- Add more columns as needed -->
+                                                </tr>
+                                                {% endfor %}
+
+
+                                                </tbody>
+                                                <tfoot>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Exchange</th>
+                                                    <th>Price</th>
+                                                    <th>Volume</th>
+                                                    <th>P/E ratio</th>
+                                                    <th>Check date</th>
+                                                    <th>Share start date</th>
+                                                </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Scroll - vertical, dynamic height -->
+
+                    <!-- Scroll - Vertical and Horizontal -->
+
+
+                </div><!-- START RIGHT SIDEBAR NAV -->
+
+            </div>
+            <div class="content-overlay"></div>
+        </div>
+    </div>
+</div>
+<!-- END: Page Main-->
+{% endblock %}
+
+
+
+
+
+<!--<footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">-->
+<!--    <div class="footer-copyright">-->
+<!--        <div class="container"><span>&copy; 2020          <a-->
+<!--                href="http://themeforest.net/user/pixinvent/portfolio?ref=pixinvent" target="_blank">PIXINVENT</a> All rights reserved.</span><span-->
+<!--                class="right hide-on-small-only">Design and Developed by <a href="https://pixinvent.com/">PIXINVENT</a></span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</footer>-->
+
+<!--&lt;!&ndash; END: Footer&ndash;&gt;-->
+<!--&lt;!&ndash; BEGIN VENDOR JS&ndash;&gt;-->
+<!--<script src="../../../static/js/vendors.min.js"></script>-->
+<!--&lt;!&ndash; BEGIN VENDOR JS&ndash;&gt;-->
+<!--&lt;!&ndash; BEGIN PAGE VENDOR JS&ndash;&gt;-->
+<!--<script src="../../../static/vendors/data-tables/js/jquery.dataTables.min.js"></script>-->
+<!--<script src="../../../static/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js"></script>-->
+<!--<script src="../../../static/vendors/data-tables/js/dataTables.select.min.js"></script>-->
+<!--&lt;!&ndash; END PAGE VENDOR JS&ndash;&gt;-->
+<!--&lt;!&ndash; BEGIN THEME  JS&ndash;&gt;-->
+<!--<script src="../../../static/js/plugins.js"></script>-->
+<!--<script src="../../../static/js/search.js"></script>-->
+<!--<script src="../../../static/js/custom/custom-script.js"></script>-->
+<!--<script src="../../../static/js/scripts/customizer.js"></script>-->
+<!--&lt;!&ndash; END THEME  JS&ndash;&gt;-->
+<!--&lt;!&ndash; BEGIN PAGE LEVEL JS&ndash;&gt;-->
+<!--<script src="../../../static/js/scripts/data-tables.js"></script>-->
+<!--&lt;!&ndash; END PAGE LEVEL JS&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->

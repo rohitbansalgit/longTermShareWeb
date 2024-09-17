@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+<!-- BEGIN: Head-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+          content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google.">
+    <meta name="keywords"
+          content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+    <title>Onion Data</title>
+    <link rel="apple-touch-icon" href="../../../static/images/favicon/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../../../static/images/favicon/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- BEGIN: VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../static/vendors/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/vendors/flag-icon/css/flag-icon.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/vendors/data-tables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/vendors/data-tables/css/select.dataTables.min.css">
+    <!-- END: VENDOR CSS-->
+    <!-- BEGIN: Page Level CSS-->
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/css/themes/vertical-modern-menu-template/materialize.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/themes/vertical-modern-menu-template/style.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/pages/data-tables.css">
+    <!-- END: Page Level CSS-->
+    <!-- BEGIN: Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="../../../static/css/custom/custom.css">
+    <!-- END: Custom CSS-->
+</head>
+<!-- END: Head-->
+<body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu preload-transitions 2-columns   "
+      data-col="2-columns" data-menu="vertical-modern-menu" data-open="click">
+
+<!-- BEGIN: Header-->
+<header class="page-topbar" id="header">
+    <div class="navbar navbar-fixed">
+        <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
+            <div class="nav-wrapper">
+
+
+                <ul class="navbar-list right">
+                    <li><a class="waves-effect waves-block waves-light profile-button" data-target="profile-dropdown"
+                           href="javascript:void(0);"><span class="avatar-status"><img
+                            alt="avatar" src="../../../static/images/avatar/newav.png"></span></a></li>
+                </ul>
+                <!-- profile-dropdown-->
+                <ul class="dropdown-content" id="profile-dropdown">
+                    ̵
+                    <li><a class="grey-text text-darken-1" href="{{ url_for('.update_password') }}"><i class="material-icons">lock_outline</i>Password</a>
+                    </li>
+                    <li><a class="grey-text text-darken-1" href="{{ url_for('.logout') }}"><i
+                            class="material-icons">keyboard_tab</i> Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- END: Header-->
+
+
+<aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-light sidenav-active-square">
+    <div class="brand-sidebar">
+        <h1 class="logo-wrapper"><a class="brand-logo darken-1" href="{{ url_for('.dashboard') }}"><img alt="lighthouse logo"
+                                                                                       class="hide-on-med-and-down"
+                                                                                       src="../../../static/images/logo/onionlogo.png"/><img
+                alt="lighthouse logo"
+                class="show-on-medium-and-down hide-on-med-and-up" src="../../../static/images/logo/materialize-logo.png"/><span
+                class="logo-text hide-on-med-and-down">Onion Data</span></a></h1>
+    </div>
+    <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" data-collapsible="menu-accordion"
+        data-menu="menu-navigation" id="slide-out">
+
+
+        <li class="active bold"><a class="waves-effect waves-cyan active " href="{{ url_for('.dashboard') }}"><i
+                class="material-icons">image_aspect_ratio</i><span class="menu-title"
+                                                                   data-i18n="Form Layouts">Dashboard</span></a>
+        </li>
+
+
+    </ul>
+    <div class="navigation-background"></div>
+    <a class="sidenav-trigger btn-sidenav-toggle btn-floating btn-medium waves-effect waves-light hide-on-large-only"
+       data-target="slide-out" href="#"><i class="material-icons">menu</i></a>
+</aside>
+
+
+
+<!-- END: SideNav-->
+{% block content %}{% endblock %}
+<!-- BEGIN: Footer-->
+
+<footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
+    <div class="footer-copyright">
+        <div class="container"><span>&copy; 2024          <a
+                href="" target="_blank">OnionData</a> All rights reserved.</span><span
+                class="right hide-on-small-only">Developed by <a href="https://oniondata.tech/">OnionData</a></span>
+        </div>
+    </div>
+</footer>
+
+<!-- END: Footer-->
+<!-- BEGIN VENDOR JS-->
+<script src="../../../static/js/vendors.min.js"></script>
+<!-- BEGIN VENDOR JS-->
+<!-- BEGIN PAGE VENDOR JS-->
+<script src="../../../static/vendors/data-tables/js/jquery.dataTables.min.js"></script>
+<script src="../../../static/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../../static/vendors/data-tables/js/dataTables.select.min.js"></script>
+<!-- END PAGE VENDOR JS-->
+<!-- BEGIN THEME  JS-->
+<script src="../../../static/js/plugins.js"></script>
+<script src="../../../static/js/search.js"></script>
+<script src="../../../static/js/custom/custom-script.js"></script>
+<script src="../../../static/js/scripts/customizer.js"></script>
+<!-- END THEME  JS-->
+<!-- BEGIN PAGE LEVEL JS-->
+<script src="../../../static/js/scripts/data-tables.js"></script>
+<!-- END PAGE LEVEL JS-->
+</body>
+</html>
